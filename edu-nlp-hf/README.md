@@ -30,14 +30,18 @@
 
 PyTorch 2.11 (CUDA 13.0) 기반이며, Hugging Face NLP 생태계가 미리 설치되어 있습니다.
 
-| 패키지 | 역할 |
-|---|---|
-| transformers | 사전학습 모델·토크나이저·pipeline·Trainer |
-| datasets | 데이터셋 로드·전처리 |
-| tokenizers | 고속 토크나이저 백엔드 |
-| sentencepiece | 일부 모델용 서브워드 토크나이저 |
-| accelerate | 학습 가속·분산 처리 백엔드 |
-| evaluate | 평가 지표(accuracy 등) |
-| tensorboard | 학습 로그 시각화 |
-| scikit-learn | 보조 평가·전처리 |
-| tqdm | 진행 상황 표시 |
+**기준일:** 2026-06-18
+
+아래 버전은 `latest` 이미지 기준 스냅샷입니다. 이미지 재빌드 시 일부 버전이 달라질 수 있으며, 현재 설치된 정확한 버전은 컨테이너 터미널에서 `pip show <패키지>`로 확인할 수 있습니다.
+
+| 패키지 | 버전 | 역할 |
+|---|---|---|
+| transformers | 5.12.1 | 사전학습 모델·토크나이저·pipeline·Trainer |
+| datasets | 5.0.0 | 데이터셋 로드·전처리 |
+| tokenizers | 0.22.2 | 고속 토크나이저 백엔드 |
+| sentencepiece | 0.2.1 | 일부 모델용 서브워드 토크나이저 |
+| accelerate | 1.14.0 | 학습 가속·분산 처리 백엔드 |
+| evaluate | 0.4.6 | 평가 지표(accuracy 등) |
+| tensorboard | 2.20.0 | 학습 로그 시각화 |
+| scikit-learn | 1.9.0 | 보조 평가·전처리 |
+| tqdm | 4.68.2 | 진행 상황 표시 |

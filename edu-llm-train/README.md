@@ -25,22 +25,27 @@
 
 - 모델(TinyLlama 등)과 데이터셋(Alpaca 등)은 노트북 실행 시 Hugging Face Hub에서 자동 다운로드되어 `/workspace/.cache/huggingface`에 저장됩니다.
 - 4비트 양자화(bitsandbytes)와 QLoRA는 CUDA GPU가 필요합니다.
+- 노트북 기본 모델(TinyLlama 1.1B)은 VRAM 8GB에서도 동작합니다. 16GB 권장은 7B 이상 대형 모델을 QLoRA로 학습할 때 기준입니다.
 
 ## 포함 환경
 
 PyTorch 2.11 (CUDA 13.0) 기반이며, LLM 파인튜닝·RAG에 필요한 패키지가 미리 설치되어 있습니다.
 
-| 패키지 | 역할 |
-|---|---|
-| transformers | LLM·토크나이저·pipeline |
-| datasets | 데이터셋 로드·전처리 |
-| peft | LoRA 등 효율적 파인튜닝(PEFT) |
-| trl | SFTTrainer 등 LLM 지도 파인튜닝 |
-| bitsandbytes | 4비트/8비트 양자화(QLoRA) |
-| accelerate | 학습 가속·분산 처리 |
-| faiss-cpu | 벡터 색인·유사도 검색(RAG) |
-| sentencepiece | 서브워드 토크나이저 |
-| einops | 텐서 연산 표기 |
-| evaluate, scikit-learn | 평가 지표 |
-| tensorboard | 학습 로그 시각화 |
-| tqdm | 진행 상황 표시 |
+**기준일:** 2026-06-18
+
+아래 버전은 `latest` 이미지 기준 스냅샷입니다. 이미지 재빌드 시 일부 버전이 달라질 수 있으며, 현재 설치된 정확한 버전은 컨테이너 터미널에서 `pip show <패키지>`로 확인할 수 있습니다.
+
+| 패키지 | 버전 | 역할 |
+|---|---|---|
+| transformers | 5.12.1 | LLM·토크나이저·pipeline |
+| datasets | 5.0.0 | 데이터셋 로드·전처리 |
+| peft | 0.19.1 | LoRA 등 효율적 파인튜닝(PEFT) |
+| trl | 1.6.0 | SFTTrainer 등 LLM 지도 파인튜닝 |
+| bitsandbytes | 0.49.2 | 4비트/8비트 양자화(QLoRA) |
+| accelerate | 1.14.0 | 학습 가속·분산 처리 |
+| faiss-cpu | 1.14.3 | 벡터 색인·유사도 검색(RAG) |
+| sentencepiece | 0.2.1 | 서브워드 토크나이저 |
+| einops | 0.8.2 | 텐서 연산 표기 |
+| evaluate, scikit-learn | 0.4.6, 1.9.0 | 평가 지표 |
+| tensorboard | 2.20.0 | 학습 로그 시각화 |
+| tqdm | 4.68.2 | 진행 상황 표시 |
