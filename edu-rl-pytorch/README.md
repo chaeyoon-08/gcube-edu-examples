@@ -21,7 +21,7 @@
 2. JupyterLab에 접속합니다.
 3. `edu-rl-pytorch` 폴더를 열어 `01`부터 순서대로 실행합니다.
 
-tensorboard 학습 로그는 `/workspace/runs` 등 적절한 디렉터리에 저장해 비교할 수 있습니다.
+학습 로그를 시각화하려면, 모델 생성 시 `tensorboard_log="/workspace/runs"`처럼 로그 경로를 지정한 뒤 tensorboard로 확인할 수 있습니다. (이 예제 노트북들은 결과를 Matplotlib 막대그래프로 비교하므로 tensorboard 설정은 포함하지 않았습니다.)
 
 ## 환경
 

@@ -1,6 +1,6 @@
 # edu-cv-pytorch — 컴퓨터비전 실습
 
-`edu-cv-pytorch` 컨테이너용 실습 예제입니다. PyTorch를 사용해 이미지 분류부터 전이학습, 데이터 증강까지 컴퓨터비전의 표준 흐름을 다룹니다. 모든 노트북은 **CIFAR-10** 데이터셋을 사용하며, 실행 시 `/workspace/data`에 자동으로 다운로드됩니다.
+`edu-cv-pytorch` 컨테이너용 실습 예제입니다. PyTorch를 사용해 이미지 분류부터 전이학습, 데이터 증강까지 컴퓨터비전의 표준 흐름을 다룹니다. 모든 노트북은 **CIFAR-10** 데이터셋을 사용하며, 실행 시 Hugging Face Hub에서 자동으로 내려받아 `/workspace/.cache/huggingface`에 저장됩니다.
 
 ## 실습 순서
 
@@ -24,7 +24,8 @@
 ## 데이터셋
 
 - **CIFAR-10** — 10개 클래스(비행기, 자동차, 새, 고양이, 사슴, 개, 개구리, 말, 배, 트럭)의 32×32 컬러 이미지 6만 장.
-- 노트북 실행 시 자동 다운로드되며 `/workspace/data`에 저장됩니다. 별도 준비가 필요 없습니다.
+- 노트북 실행 시 Hugging Face Hub(`uoft-cs/cifar10`)에서 자동으로 내려받아 `/workspace/.cache/huggingface`에 저장됩니다.
+- CIFAR-10을 Hugging Face Hub에서 받기 위해 `datasets` 패키지가 필요합니다. 이 패키지는 컴퓨터비전 이미지 기본 구성에는 포함되지 않으므로, **각 노트북 첫 셀에서 `%pip install datasets`로 설치**합니다(한 번 설치하면 같은 세션에서는 다시 설치할 필요가 없습니다).
 
 ## 포함 환경
 

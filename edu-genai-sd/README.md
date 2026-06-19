@@ -23,7 +23,7 @@
 
 ## 모델
 
-- Stable Diffusion v1.5 모델은 노트북 실행 시 Hugging Face Hub에서 자동 다운로드되어 `/workspace/.cache/huggingface`에 저장됩니다.
+- Stable Diffusion v1.5 모델은 노트북 실행 시 Hugging Face Hub에서 자동 다운로드되어 `/workspace/.cache/huggingface`에 저장됩니다. GPU 환경에서는 절반 크기의 fp16 변형(`variant='fp16'`)을 받아 다운로드 용량을 줄입니다. 그래도 모델이 수 GB이므로 처음 실행 시 다운로드에 시간이 걸릴 수 있으며, 한 번 받으면 이후에는 캐시에서 빠르게 로드됩니다.
 - 이미지 생성은 GPU 메모리를 많이 사용합니다. 메모리가 빠듯하면 `enable_attention_slicing()`을 사용하세요.
 - 노트북 기본 모델(Stable Diffusion v1.5)은 VRAM 8GB에서도 동작합니다. 16GB 권장은 SDXL 등 대형 모델이나 LoRA 학습을 할 때 기준입니다.
 

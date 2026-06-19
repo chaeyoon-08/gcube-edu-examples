@@ -9,7 +9,7 @@
 | 노트북 | 내용 |
 |---|---|
 | `01_image_classification_keras.ipynb` | Fashion-MNIST를 Keras로 분류합니다. 데이터 로드·시각화, 모델 정의(Sequential), `model.fit`/`evaluate`, 학습 곡선·예측 결과 시각화까지 TensorFlow/Keras의 기본 워크플로를 익힙니다. |
-| `02_transfer_learning.ipynb` | ImageNet 사전학습 MobileNetV2를 CIFAR-10에 전이학습합니다. 특징 추출(freeze) 후 미세조정(fine-tuning)하며, Keras 전처리 레이어로 데이터 증강을 적용합니다. |
+| `02_transfer_learning.ipynb` | ImageNet 사전학습 MobileNetV2를 Fashion-MNIST에 전이학습합니다. 흑백 이미지를 3채널·96×96으로 변환한 뒤, 특징 추출(freeze) 후 미세조정(fine-tuning)하며 Keras 전처리 레이어로 데이터 증강을 적용합니다. |
 | `03_overfitting_callbacks.ipynb` | 과적합을 학습/검증 곡선으로 진단하고, 데이터 증강·Dropout·EarlyStopping 콜백으로 완화하는 효과를 비교합니다. |
 
 ## 실행 방법
@@ -21,10 +21,11 @@
 2. JupyterLab에 접속합니다.
 3. `edu-dl-tensorflow` 폴더를 열어 `01`부터 순서대로 실행합니다.
 
+> 폴더의 `gcube_quiet.py`는 TensorFlow가 GPU 초기화 시 출력하는 무해한 경고 메시지를 걸러 주는 보조 파일입니다. 각 노트북 첫 셀에서 자동으로 불러오며, 직접 실행할 필요는 없습니다.
+
 ## 데이터셋
 
 - **Fashion-MNIST** — 10종류 의류(티셔츠, 바지, 신발 등)의 28×28 흑백 이미지 7만 장. 딥러닝 입문 표준 데이터셋.
-- **CIFAR-10** — 10개 클래스의 32×32 컬러 이미지 6만 장.
 - 모두 `tf.keras.datasets`로 노트북 실행 시 자동 다운로드됩니다. 별도 준비가 필요 없습니다.
 
 ## 포함 환경
